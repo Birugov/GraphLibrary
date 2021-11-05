@@ -108,7 +108,7 @@ class LinearGraph constructor(
                 isAntiAlias = true
             }
             circleRadius = convertDpToPx(
-                typedArray.getInteger(R.styleable.GraphView_circleRadius, 3).toFloat()
+                typedArray.getInteger(R.styleable.GraphView_pointRadius, 3).toFloat()
             )
             pathOnTop = typedArray.getBoolean(R.styleable.GraphView_pathOnTop, true)
             drawGrids = typedArray.getBoolean(R.styleable.GraphView_drawGrids, true)

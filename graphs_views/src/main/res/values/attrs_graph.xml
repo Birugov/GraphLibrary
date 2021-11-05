@@ -8,7 +8,7 @@
         <attr name="gridColor" format="color" /> <!-- Self explanatory -->
         <attr name="graduationColor" format="color" /> <!-- Self explanatory -->
 
-        <attr name="circleRadius" format="integer" /> <!-- Self explanatory -->
+        <attr name="pointRadius" format="integer" /> <!-- Self explanatory -->
         <attr name="pathWidth" format="integer" /> <!-- Self explanatory -->
 
         <attr name="pathOnTop" format="boolean" /> <!-- Draw Path on Top of all other drawing items (i.e: circle, grid, gradients etc. )-->
