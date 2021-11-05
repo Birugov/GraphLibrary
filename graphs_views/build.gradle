@@ -48,9 +48,10 @@ afterEvaluate {
         publications{
             release(MavenPublication){
                 from components.release
+
                 groupId = 'com.github.Birugov'
                 artifactId = 'graphs-custom-view'
-                version = '1.0'
+                version = '1.0.1'
             }
         }
     }

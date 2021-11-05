@@ -14,7 +14,7 @@ enum class GraphType {
 
 class LinearGraph constructor(
     context: Context,
-    attrs: AttributeSet
+    attrs: AttributeSet?
 ) : View(context, attrs) {
 
     private lateinit var path: Path
