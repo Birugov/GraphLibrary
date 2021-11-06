@@ -26,7 +26,7 @@ class LinearGraph constructor(
     private lateinit var colorsArray: IntArray
     private lateinit var circlePaint: Paint
 
-    private var extraPadding = convertDpToPx(10f) // TODO : Take input from the user
+    private var extraPadding = convertDpToPx(10f)
 
     private lateinit var coordinates: ArrayList<Pair<Float, Float>>
     private var maxXValue: Float = 0f

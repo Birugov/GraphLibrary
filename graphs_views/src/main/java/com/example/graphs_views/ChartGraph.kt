@@ -56,7 +56,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
             textAlign = Paint.Align.CENTER
         }
 
-
+        series.add(BarSeries("sgfgdfg", 0.2f))
 
 
     }
@@ -82,15 +82,15 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         val width = (gridRight - gridTopLeft - totalSpace) / series.size
         var left = gridTopLeft + spacing
         var right = left + width
-        val height = canvasHeight - 2 * padding
+        val height = canvasHeight - 2 * padding - xLabelWidth
         for ( i in series){
             val top = padding + height * (1f-i.value)
             canvas?.apply {
                 drawRect(left, top, right, gridBottom, barPainter)
                 save()
-                rotate(90f)
-                drawText(i.label, -height, left+(width + 2 * spacing) / 2, xLabelPainter)
-                canvas.restore()
+                rotate(-90f)
+                drawText(i.label, -height-padding-10f, left+(width + 2 * spacing) / 2, xLabelPainter)
+                restore()
             }
 
             left = right + spacing
