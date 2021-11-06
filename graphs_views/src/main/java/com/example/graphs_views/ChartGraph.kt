@@ -72,11 +72,11 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         val gridTopLeft = padding + yLabelWidth + 10f
 
         drawAxis(canvas, gridTopLeft, gridBottom, gridRight)
-        drawBars(canvas, height.toFloat(),  gridTopLeft, gridBottom, gridRight)
+        drawBars(canvas, height,  gridTopLeft, gridBottom, gridRight)
 
     }
 
-    private fun drawBars(canvas: Canvas?, canvasHeight:Float, gridTopLeft: Float, gridBottom: Float, gridRight: Float) {
+    private fun drawBars(canvas: Canvas?, canvasHeight:Int, gridTopLeft: Float, gridBottom: Float, gridRight: Float) {
         val spacing = 10f
         val totalSpace = spacing * series.size
         val width = (gridRight - gridTopLeft - totalSpace) / series.size
@@ -89,7 +89,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
                 drawRect(left, top, right, gridBottom, barPainter)
                 save()
                 rotate(-90f)
-                drawText(i.label, -height - padding - 70f, left+(width + 2 * spacing) / 2, xLabelPainter)
+                drawText(i.label, -height-padding-60f, left+(width + 2 * spacing) / 2, xLabelPainter)
                 restore()
             }
 
@@ -100,7 +100,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
 
     private fun drawAxis(canvas: Canvas?, gridTopLeft: Float, gridBottom: Float, gridRight: Float) {
         canvas?.drawLine(gridTopLeft, gridBottom, gridTopLeft, padding, axisPainter)
-        canvas?.drawLine(gridTopLeft, gridBottom, gridTopLeft, gridBottom, axisPainter)
+        canvas?.drawLine(gridTopLeft, gridBottom, gridRight, gridBottom, axisPainter)
     }
 
     private fun drawGuids(canvas: Canvas?, gridBottom: Float, gridRight: Float) {
@@ -114,7 +114,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
             var bound = Rect()
             yLabelPainter.getTextBounds(label, 0, label.length, bound)
 
-            y = padding + i *spacing
+            y = padding + i * spacing
             canvas?.drawLine(padding+yLabelWidth, y , gridRight, y , guidePainter)
             canvas?.drawText(label, padding+yLabelWidth, y+bound.height() / 2, yLabelPainter)
         }
