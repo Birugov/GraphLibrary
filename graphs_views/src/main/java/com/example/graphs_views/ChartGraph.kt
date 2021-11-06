@@ -89,7 +89,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
                 drawRect(left, top, right, gridBottom, barPainter)
                 save()
                 rotate(-90f)
-                drawText(i.label, -height-padding-10f, left+(width + 2 * spacing) / 2, xLabelPainter)
+                drawText(i.label, -height - padding - 70f, left+(width + 2 * spacing) / 2, xLabelPainter)
                 restore()
             }
 
