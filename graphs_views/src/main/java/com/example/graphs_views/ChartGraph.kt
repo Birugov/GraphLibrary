@@ -14,11 +14,30 @@ import kotlin.random.Random
 
 class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
-    private lateinit var barPainter:Paint
-    private lateinit var axisPainter:Paint
-    private lateinit var guidePainter:Paint
-    private lateinit var xLabelPainter:Paint
-    private lateinit var yLabelPainter:Paint
+    private var barPainter:Paint = Paint().apply {
+        style = Paint.Style.FILL
+        color = Color.LTGRAY
+    }
+    private var axisPainter:Paint = Paint().apply {
+        style = Paint.Style.STROKE
+        color = Color.BLACK
+        strokeWidth = 5f
+    }
+    private var guidePainter:Paint = Paint().apply {
+        style = Paint.Style.STROKE
+        color = Color.BLACK
+        strokeWidth = 3f
+    }
+    private var xLabelPainter:Paint = Paint().apply {
+        color = Color.BLACK
+        textSize = 30f
+        textAlign = Paint.Align.CENTER
+    }
+    private var yLabelPainter:Paint = Paint().apply {
+        color = Color.BLACK
+        textSize = 30f
+        textAlign = Paint.Align.CENTER
+    }
 
     private var padding:Float = 20f
     private var yLabelWidth:Float = 0f
@@ -27,34 +46,6 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
 
 
     init {
-        barPainter = Paint().apply {
-            style = Paint.Style.FILL
-            color = Color.LTGRAY
-        }
-
-        axisPainter = Paint().apply {
-            style = Paint.Style.STROKE
-            color = Color.BLACK
-            strokeWidth = 5f
-        }
-
-        guidePainter = Paint().apply {
-            style = Paint.Style.STROKE
-            color = Color.BLACK
-            strokeWidth = 3f
-        }
-
-        xLabelPainter = Paint().apply {
-            color = Color.BLACK
-            textSize = 30f
-            textAlign = Paint.Align.CENTER
-        }
-
-        yLabelPainter = Paint().apply {
-            color = Color.BLACK
-            textSize = 30f
-            textAlign = Paint.Align.CENTER
-        }
 
         series.add(BarSeries("sgfgdfg", 0.2f))
 
