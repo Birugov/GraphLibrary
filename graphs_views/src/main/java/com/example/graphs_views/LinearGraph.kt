@@ -124,9 +124,8 @@ class LinearGraph constructor(
     }
 
     fun setCoordinatePoints(coordinates: ArrayList<Pair<Float, Float>>) {
-        this.coordinates = coordinates
         getMaxCoordinateValues()
-        sortXCoordinates()
+        this.coordinates = sortXCoordinates(coordinates)
         invalidate()
     }
 
@@ -147,8 +146,11 @@ class LinearGraph constructor(
         }
     }
 
-    private fun sortXCoordinates() {
-
+    private fun sortXCoordinates(coordinates: ArrayList<Pair<Float, Float>>): ArrayList<Pair<Float, Float>> {
+        coordinates.sortBy {
+            it.first
+        }
+        return coordinates
     }
 
     private fun convertPxToDp(px: Float): Float {

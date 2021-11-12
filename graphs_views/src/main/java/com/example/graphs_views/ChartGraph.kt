@@ -46,13 +46,6 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
     private var series:ArrayList<BarSeries> = ArrayList()
 
 
-    init {
-
-        series.add(BarSeries("sgfgdfg", 0.2f))
-
-
-    }
-
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         val height = height
@@ -117,5 +110,6 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         this.series = barSeries
         val label = series.stream().max(Comparator.comparingInt { x->x.label.length }).get().label
         xLabelWidth = xLabelPainter.measureText(label)
+        invalidate()
     }
 }
