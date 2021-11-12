@@ -124,8 +124,8 @@ class LinearGraph constructor(
     }
 
     fun setCoordinatePoints(coordinates: ArrayList<Pair<Float, Float>>) {
-        getMaxCoordinateValues()
         this.coordinates = sortXCoordinates(coordinates)
+        getMaxCoordinateValues()
         invalidate()
     }
 
