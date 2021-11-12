@@ -9,6 +9,7 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.graphics.toColor
 import kotlin.properties.Delegates
 import kotlin.random.Random
 
@@ -16,16 +17,16 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
 
     private var barPainter:Paint = Paint().apply {
         style = Paint.Style.FILL
-        color = Color.LTGRAY
+        color = Color.parseColor("#fef08c")
     }
     private var axisPainter:Paint = Paint().apply {
         style = Paint.Style.STROKE
-        color = Color.BLACK
+        color = Color.parseColor("#f8cb7a")
         strokeWidth = 5f
     }
     private var guidePainter:Paint = Paint().apply {
         style = Paint.Style.STROKE
-        color = Color.BLACK
+        color = Color.parseColor("#f8cb7a")
         strokeWidth = 3f
     }
     private var xLabelPainter:Paint = Paint().apply {
@@ -34,7 +35,7 @@ class ChartGraph(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         textAlign = Paint.Align.CENTER
     }
     private var yLabelPainter:Paint = Paint().apply {
-        color = Color.BLACK
+        color = Color.parseColor("#3700B3")
         textSize = 30f
         textAlign = Paint.Align.CENTER
     }
