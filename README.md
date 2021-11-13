@@ -185,3 +185,31 @@ class BarSeries (
     }
 ```
 Также функция обрабатывает названия элементов выбранных для отображения какой-либо статистики и перерисовывает представление как и первый граф
+---
+## Подключение зависимости
+---
+### Подключение jitpack.io
+На последних версиях Gradle нужно прописать строчку ниже в файл settings.gradle
+```
+ dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+```
+
+Для старых версий в build.gradle на уровне проекта(вроде:D)
+```
+allProjects{
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+```
