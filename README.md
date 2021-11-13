@@ -213,3 +213,9 @@ allProjects{
     }
 }
 ```
+### Подключение зависимости
+Здесь ничего нового, подключаете зависимость в build.gradle на уровне модуля
+```
+    implementation 'com.github.Birugov:GraphLibrary:1.1.6'
+```
+
